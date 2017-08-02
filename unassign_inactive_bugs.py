@@ -5,6 +5,9 @@ import os
 from launchpadlib import launchpad
 
 
+# FIXME(lbragstad): This should eventually be pulled from config so that the
+# script is more general and others can use it without having to modify the
+# script.
 NAME = 'Lance Bragstad'
 LP_INSTANCE = 'production'
 CACHE_DIR = os.path.expanduser('~/.launchpadlib/cache/')
