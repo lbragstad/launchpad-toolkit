@@ -19,16 +19,19 @@ $ source .venv/bin/activate
 A basic script that reports all new bug activity within a given time period.
 
 ```
-$ python recent_bugs.py -h
-usage: recent_bugs.py [-h] [-d DAYS] -p PROJECT [PROJECT ...] [-H]
+$ python -m tools.recent_bugs --help
+usage: recent_bugs.py [-h] [--config-file CONFIG_FILE] [-d DAYS] [-H]
+                      projects [projects ...]
 
 summarize bugs from a launchpad project
 
+positional arguments:
+  projects
+
 optional arguments:
   -h, --help            show this help message and exit
+  --config-file CONFIG_FILE
   -d DAYS, --days DAYS  history in number of days
-  -p PROJECT [PROJECT ...], --project PROJECT [PROJECT ...]
-                        launchpad project(s) to pull bugs from
   -H, --html            Format the reports as HTML
 ```
 
@@ -38,12 +41,12 @@ Generate a weekly report for all bugs recently opened in OpenStack Identity
 project.
 
 ```
-(.venv)$ python recent_bugs.py -d 7 -p keystone
+(.venv)$ python -m tools.recent_bugs -d 7 -p keystone
 ```
 
 Generate a monthly report for all bugs opened against all OpenStack Identity
 projects.
 
 ```
-(.venv)$ python recent_bugs.py -d 30 -p keystone keystoneauth keystonemiddleware python-keystoneclient
+(.venv)$ python -m tools.recent_bugs -d 30 -p keystone keystoneauth keystonemiddleware python-keystoneclient
 ```
