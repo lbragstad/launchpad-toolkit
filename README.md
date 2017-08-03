@@ -50,3 +50,32 @@ projects.
 ```
 (.venv)$ python -m tools.recent_bugs -d 30 -p keystone keystoneauth keystonemiddleware python-keystoneclient
 ```
+
+## Office Hours
+
+Generate a report consisting of all bug activity for a project within a given
+time period.
+
+```
+$ python -m tools.office_hours --help
+usage: office_hours.py [-h] [--config-file CONFIG_FILE] -s START [-e END]
+                       projects [projects ...]
+
+positional arguments:
+  projects              Project(s) to report on
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --config-file CONFIG_FILE
+  -s START, --start START
+                        Start of report in YYYY-MM-DD:HH:mm format
+  -e END, --end END     End of report in YYYY-MM-DD:HH:mm format
+```
+
+### Example Usage
+
+Generate a report for keystone's office hours.
+
+```
+(.venv)$ python -m tools.office_hours -s 2017-08-01:19:00 -e 2017-08-01:22:00 keystone
+```
