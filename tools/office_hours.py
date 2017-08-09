@@ -45,7 +45,6 @@ def main(config, project_names, start, end):
             activities = bug.bug.activity
             for activity in activities:
                 if activity.datechanged < end and activity.datechanged > start:
-                    print bug.bug.id
                     print bug.title
                     print bug.web_link
                     print activity.whatchanged
