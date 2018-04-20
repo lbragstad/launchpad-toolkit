@@ -82,6 +82,9 @@ celerybeat-schedule
 # dotenv
 .env
 
+# vi
+*.swp
+
 # virtualenv
 .venv
 venv/
@@ -99,3 +102,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# report config files
+report-configs
