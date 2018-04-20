@@ -17,7 +17,7 @@ $ source .venv/bin/activate
 
 ## Building Bug Reports
 
-This script will scrap Launchpad for bugs within a given time window and
+This script will scrape Launchpad for bugs within a given time window and
 attempt to build a report.
 
 ```
