@@ -103,7 +103,7 @@ def main(launchpad_config, report_config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Keystone bug reports.')
+        description='Automated bug reports.')
     parser.add_argument(
         '--launchpad-config-file', default='~/.launchpadtk.conf'
     )
