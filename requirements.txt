@@ -3,3 +3,4 @@ lazr.authentication
 launchpadlib
 simplejson
 pytz
+dateparser
