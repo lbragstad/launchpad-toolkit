@@ -47,7 +47,7 @@ $ cat << EOF > report.conf
 Then run the script:
 
 ```
-$ python bug_report.py
+$ python bug_report.py --report-config-file report.conf
 Bugs opened (5)
 Bug #1763824 (keystone:Medium) opened by Morgan Fainberg https://bugs.launchpad.net/keystone/+bug/1763824
 Bug #1765193 (keystone:Medium) opened by Lance Bragstad https://bugs.launchpad.net/keystone/+bug/1765193
