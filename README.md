@@ -25,7 +25,7 @@ $ python bug_report.py -h
 usage: bug_report.py [-h] [--launchpad-config-file LAUNCHPAD_CONFIG_FILE]
                      [--report-config-file REPORT_CONFIG_FILE]
 
-Keystone bug reports.
+Automated bug reports.
 
 optional arguments:
   -h, --help            show this help message and exit
