@@ -88,14 +88,17 @@ def main(launchpad_config, report_config):
 
     print('\nBugs fixed (%d)' % len(fixed_bugs))
     for bug in fixed_bugs:
-        assignee = bug.assignee.display_name
+        if bug.assignee:
+            assignee = bug.assignee.display_name
+        else:
+            assignee = 'no one'
         s = ('Bug #%(number)s (%(target)s:%(sev)s) fixed by '
              '%(assignee)s %(link)s')
         s = s % {
             'number': bug.bug.id,
             'target': bug.bug_target_name,
             'sev': bug.importance,
-            'assignee': assignee if assignee else 'no one',
+            'assignee': assignee,
             'link': bug.web_link
         }
         print(s)
