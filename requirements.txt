@@ -1,5 +1,6 @@
 lxml
 lazr.authentication
+lazr.restfulclient==0.13.1
 launchpadlib
 simplejson
 pytz
