@@ -65,11 +65,17 @@ def main(launchpad_config, report_config):
 
     print('Bugs opened (%d)' % len(created_bugs))
     for bug in created_bugs:
-        s = 'Bug #%(number)s (%(target)s:%(sev)s) opened by %(owner)s %(link)s'
+        s = ''.join(
+            [
+                'Bug #%(number)s (%(target)s:%(sev)s): %(title)s\n',
+                ' - Opened by %(owner)s %(link)s'
+            ]
+        )
         s = s % {
             'number': bug.bug.id,
             'target': bug.bug_target_name,
             'sev': bug.importance,
+            'title': bug.bug.title,
             'owner': bug.owner.display_name,
             'link': bug.web_link
         }
@@ -92,12 +98,17 @@ def main(launchpad_config, report_config):
             assignee = bug.assignee.display_name
         else:
             assignee = 'no one'
-        s = ('Bug #%(number)s (%(target)s:%(sev)s) fixed by '
-             '%(assignee)s %(link)s')
+        s = ''.join(
+            [
+                'Bug #%(number)s (%(target)s:%(sev)s): %(title)s\n',
+                ' - Fixed by %(assignee)s %(link)s'
+            ]
+        )
         s = s % {
             'number': bug.bug.id,
             'target': bug.bug_target_name,
             'sev': bug.importance,
+            'title': bug.bug.title,
             'assignee': assignee,
             'link': bug.web_link
         }
